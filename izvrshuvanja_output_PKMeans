@@ -1,0 +1,370 @@
+Serial execution for 2000 samples
+Parallel execution for 2000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 4000 samples
+Parallel execution for 4000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 8000 samples
+Parallel execution for 8000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 16000 samples
+Parallel execution for 16000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial Times: [0.6075018405914306, 1.2508371591567993, 2.011733603477478, 4.66209659576416]
+Parallel Times for 2000 samples:
+  2 cores: 2.0236177682876586
+  4 cores: 3.032279944419861
+  6 cores: 3.286440110206604
+Parallel Times for 4000 samples:
+  2 cores: 2.60832736492157
+  4 cores: 3.081585741043091
+  6 cores: 4.218277502059936
+Parallel Times for 8000 samples:
+  2 cores: 3.62250394821167
+  4 cores: 3.7561243057250975
+  6 cores: 4.854680514335632
+Parallel Times for 16000 samples:
+  2 cores: 4.889180612564087
+  4 cores: 4.802276062965393
+  6 cores: 6.64032096862793
+  
+  
+Serial execution for 32000 samples
+Parallel execution for 32000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 48000 samples
+Parallel execution for 48000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 64000 samples
+Parallel execution for 64000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 96000 samples
+Parallel execution for 96000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial Times: [8.972252225875854, 12.988133025169372, 19.21689133644104, 32.97604887485504]
+Parallel Times for 32000 samples:
+  2 cores: 7.601040458679199
+  4 cores: 7.195327520370483
+  6 cores: 7.573333716392517
+Parallel Times for 48000 samples:
+  2 cores: 12.0547771692276
+  4 cores: 7.8156269788742065
+  6 cores: 9.776570892333984
+Parallel Times for 64000 samples:
+  2 cores: 16.272322940826417
+  4 cores: 12.32695939540863
+  6 cores: 11.914310312271118
+Parallel Times for 96000 samples:
+  2 cores: 27.820460844039918
+  4 cores: 15.377381896972656
+  6 cores: 19.196191668510437
+  
+  
+Serial execution for 128000 samples
+Parallel execution for 128000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 176000 samples
+Parallel execution for 176000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 208000 samples
+Parallel execution for 208000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 256000 samples
+Parallel execution for 256000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial Times: [45.05005786418915, 58.9005710363388, 74.70431180000305, 97.07543227672576]
+Parallel Times for 128000 samples:
+  2 cores: 33.15603933334351
+  4 cores: 23.079898071289062
+  6 cores: 19.552495455741884
+Parallel Times for 176000 samples:
+  2 cores: 48.70815486907959
+  4 cores: 26.726802587509155
+  6 cores: 23.983519124984742
+Parallel Times for 208000 samples:
+  2 cores: 62.102319383621214
+  4 cores: 32.76468374729156
+  6 cores: 30.19785342216492
+Parallel Times for 256000 samples:
+  2 cores: 66.67599835395814
+  4 cores: 46.960315346717834
+  6 cores: 40.35036220550537
+  
+  
+Serial execution for 304000 samples
+Parallel execution for 304000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 352000 samples
+Parallel execution for 352000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial execution for 400000 samples
+Parallel execution for 400000 samples
+Starting with 2 cores
+Using 2 threads for batch 1
+Using 2 threads for batch 2
+Using 2 threads for batch 3
+Using 2 threads for batch 4
+Using 2 threads for batch 5
+Starting with 4 cores
+Using 4 threads for batch 1
+Using 4 threads for batch 2
+Using 4 threads for batch 3
+Using 4 threads for batch 4
+Using 4 threads for batch 5
+Starting with 6 cores
+Using 6 threads for batch 1
+Using 6 threads for batch 2
+Using 6 threads for batch 3
+Using 6 threads for batch 4
+Using 6 threads for batch 5
+Serial Times: [136.2126736164093, 115.64596951007843, 149.86407387256622]
+Parallel Times for 304000 samples:
+  2 cores: 91.47340440750122
+  4 cores: 49.132115077972415
+  6 cores: 48.987099051475525
+Parallel Times for 352000 samples:
+  2 cores: 95.65075054168702
+  4 cores: 58.92307856082916
+  6 cores: 50.197532296180725
+Parallel Times for 400000 samples:
+  2 cores: 109.87223522663116
+  4 cores: 58.79104278087616
+  6 cores: 63.09821407794952
