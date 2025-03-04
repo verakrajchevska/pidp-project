@@ -57,6 +57,8 @@ class SerialKMeans:
         self.iterations = iteration
         return self
 
+    def predict(self, data):
+        return [self.closest_centroid(point) for point in data]
 
 sim1 = []
 
