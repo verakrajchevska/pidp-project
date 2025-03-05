@@ -18,27 +18,6 @@ comparison_times = {
     "parallel cores=6": parallel_times6,
 }
  
-# #EXECUTION TIMES LOG
-
-# plt.figure(figsize=(12, 6))
-
-# for label, times in comparison_times.items():
-#     plt.plot(num_samples, times, marker='o', label=label)
-
-# plt.xscale('log')
-
-# ticks = [2000, 4000, 8000, 16000, 32000, 48000, 64000, 96000, 128000, 176000, 208000, 256000, 304000, 352000, 400000]
-# plt.xticks(ticks, labels=[str(x) for x in ticks], rotation=45)
-
-# plt.grid(True, which="both", linestyle="--", linewidth=0.5)
-# plt.xlabel("Number of samples (log scale)")
-# plt.ylabel("Computational Time (seconds)")
-# plt.title("Comparison of Serial and Parallel K-Means Execution Time (Logarithmic Scale)")
-# plt.legend()
-
-# plt.tight_layout()
-# plt.savefig('new_execution_times_log_scale.png')
-
 
 #EXECUTION TIMES
 

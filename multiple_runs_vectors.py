@@ -6,8 +6,6 @@ import gc
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from parallel_k_means_new import ParallelKMeans
 from serial_k_means_new import SerialKMeans
-import matplotlib.pyplot as plt
-from matplotlib.cm import get_cmap
 
 file_path = '../Documents/Parallel_K_Means/Glove datasets/glove.6B/glove.6B.50d.txt'
 words, vectors = [], []

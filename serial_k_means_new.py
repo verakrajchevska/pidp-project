@@ -14,7 +14,7 @@ class SerialKMeans:
         self.max_iter = max_iter
 
     def initialize_centroids(self, data):
-        random_indices = np.random.permutation(data.shape[0])[:self.n_clusters]
+        random_indices = np.random.choice(data.shape[0])[:self.n_clusters]
         return data[random_indices]
 
     def assign_clusters(self, data):
@@ -33,14 +33,15 @@ class SerialKMeans:
     def euclidean_distance(self, point_a, point_b):
         return np.sqrt(np.sum((point_a - point_b) ** 2))
 
-    def compute_centroids(self, clusters):
+    def compute_centroids(self, clusters, data):
         # compute new centroids using the mean
         new_centroids = []
         for cluster in clusters:
             if cluster:  # if cluster is empty
                 new_centroids.append(np.mean(cluster, axis=0))
             else:
-                new_centroids.append(np.zeros_like(self.centroids[0]))
+                new_centroids.append(data[np.random.randint(data.shape[0])])
+                # reinitialize empty clusters
         return new_centroids
 
 
@@ -49,7 +50,7 @@ class SerialKMeans:
         for iteration in range(self.max_iter):
             # Assigning points to the nearest centroid
             clusters = self.assign_clusters(data)
-            new_centroids = self.compute_centroids(clusters)
+            new_centroids = self.compute_centroids(clusters, data)
             # Check for convergence
             if np.allclose(self.centroids, new_centroids):
                 break
