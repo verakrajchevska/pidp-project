@@ -40,21 +40,12 @@ def run_kmeans_multiple_times(num_cores, X, runs=10):
         all_execution_times.append(max_times_per_iteration)
         all_per_core_times.append(execution_times)  # Raw times per core per iteration
 
-    # Align by padding
-    max_iters = max(len(run) for run in all_execution_times)
-    padded_times = [run + [np.nan] * (max_iters - len(run)) for run in all_execution_times]
-
-    # Computing the average execution time for each iteration across runs
-    averaged_times = np.nanmean(padded_times, axis=0)
-
-    # Align per-core times by padding
-    per_core_padded = []
-    for run in all_per_core_times:
-        padded_run = run + [[np.nan] * num_cores] * (max_iters - len(run))
-        per_core_padded.append(np.array(padded_run))  
     
+    # Computing the average execution time for each iteration across runs
+    averaged_times = np.mean(all_execution_times, axis=0)
+
     # Computing the mean per core per iteration
-    per_core_means = np.nanmean(np.array(per_core_padded), axis=0)  # Shape: (num_iters, num_cores)
+    per_core_means = np.mean(all_per_core_times, axis=0) 
 
     return averaged_times, per_core_means
 
@@ -69,23 +60,6 @@ for cores in core_configs:
     core_means_per_config.append(per_core_means)
 
 
-# Execution times for all cores sequentially flattened across all iteartions
-plt.figure(figsize=(10, 6))
-
-for cores, per_core_means in zip(core_configs, core_means_per_config):
-    # Flatten the list of lists into a single array of execution times
-    concatenated_times = np.array(per_core_means).flatten()  # Shape: (num_iterations * num_cores,)
-    
-    plt.plot(concatenated_times, label=f"{cores} Cores", marker='o', linestyle='-', markersize=4)
-
-plt.xlabel("Core Execution (Flattened Iterations)")
-plt.ylabel("Execution Time (seconds)")
-plt.title("Execution Times Across Iterations and Cores")
-plt.legend()
-plt.grid(True)
-
-plt.savefig('flattened_iterations_load_per_core.png')
-
 # Plotting the averaged execution times for each core configuration
 def plot_execution_times(core_configs, average_execution_times_per_core):
     plt.figure(figsize=(10, 6))
@@ -97,7 +71,8 @@ def plot_execution_times(core_configs, average_execution_times_per_core):
     plt.legend()
     plt.grid(True)
 
-# Plotting per-core average execution times for each core configuration (for stacked line graph)
+
+# Stacked line graph
 def plot_per_core_means(core_configs, core_means_per_config):
     plt.figure(figsize=(10, 6))
     for i, core_means in enumerate(core_means_per_config):
@@ -111,15 +86,30 @@ def plot_per_core_means(core_configs, core_means_per_config):
     plt.grid(True)
 
 
+
+# Execution times for all cores sequentially flattened across all iteartions
+def plot_flattened_execution_times(core_configs, core_means_per_config):
+    plt.figure(figsize=(10, 6))
+    for cores, per_core_means in zip(core_configs, core_means_per_config):
+    # Flatten the list of lists into a single array of execution times
+        concatenated_times = np.array(per_core_means).flatten()  # Shape: (num_iterations * num_cores,)
+        plt.plot(concatenated_times, label=f"{cores} Cores", marker='o', linestyle='-', markersize=4)
+    plt.xlabel("Core Execution (Flattened Iterations)")
+    plt.ylabel("Execution Time (seconds)")
+    plt.title("Execution Times Across Iterations and Cores")
+    plt.legend()
+    plt.grid(True)
+
+
+# Plot the results
 plot_execution_times(core_configs, average_execution_times_per_core)
+plt.savefig('1new_load_balancing_exectime.png') 
+
 plot_per_core_means(core_configs, core_means_per_config)
+plt.savefig('1core_means_per_iteration.png')
 
-plt.savefig('new_load_balancing_exectime.png') 
-plt.savefig('core_means_per_iteration.png')
-
-
-
-
+plot_flattened_execution_times(core_configs, core_means_per_config)
+plt.savefig('1flattened_iterations_load_per_core.png')
 
 
 

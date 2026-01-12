@@ -1,0 +1,20 @@
+Dear Editors of Language Resources and Evaluation,
+
+We are pleased to submit our manuscript titled “Accelerating Word Embedding Clustering with Parallel K-Means: A Case Study on the Macedonian Corpus” for consideration as an original research article in Language Resources and Evaluation.
+
+This work addresses the persistent underrepresentation of low-resource languages in NLP, focusing on Macedonian as a morphologically rich South Slavic language with limited resources. We target a practical but underexplored question: how large-scale clustering of word embeddings behaves for a low-resource language, and how preprocessing and algorithmic choices affect both efficiency and the structure of the resulting clusters.
+
+The paper makes four main contributions. First, we introduce an end-to-end, fully reproducible clustering pipeline for Macedonian word embeddings, coupling fastText training with both serial and parallel K-means under deterministic settings. Second, we propose language-aware diagnostics to interpret whether clusters primarily capture semantic fields or morphological families. Third, we empirically show that our parallel K-means implementation achieves substantial speedups on large vocabularies without degrading intrinsic clustering quality, with close agreement to the serial baseline in terms of centroid geometry and assignment overlap. Finally, we compare our implementation to a scikit-learn baseline and release code and configuration as an open resource to support transparent, repeatable experimentation on Macedonian and related low-resource languages.
+
+We believe this work is well aligned with the scope of Language Resources and Evaluation, as it contributes both language resources and evaluation methodology with a particular emphasis on low-resource scenarios and reproducibility.
+
+We confirm that this manuscript is original, has not been published previously, and is not under consideration for publication elsewhere. All authors have approved the manuscript and its submission to Language Resources and Evaluation, and we have no conflicts of interest to declare. 
+
+Thank you for considering our manuscript. We would be grateful for the opportunity to have it reviewed for publication in Language Resources and Evaluation.
+
+Sincerely,
+Vera Krajchevska
+on behalf of all co-authors
+Faculty of Computer Science and Engineering
+Ss. Cyril and Methodius University in Skopje
+vera.krajchevska@students.finki.ukim.mk
