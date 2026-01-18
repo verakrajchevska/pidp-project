@@ -92,3 +92,32 @@ for n, std_devs in parallel_std_devs.items():
     for cores, sd in std_devs.items():
         print(f"  {cores} cores: {sd}")
 
+
+
+rows = []
+
+for i, n in enumerate(num_samples):
+    # serial
+    rows.append({
+        "num_samples": n,
+        "method": "serial",
+        "cores": 1,
+        "mean_time": serial_times[i],
+        "std_time": serial_std_devs[i]
+    })
+
+    # parallel
+    for cores in num_cores:
+        rows.append({
+            "num_samples": n,
+            "method": "parallel",
+            "cores": cores,
+            "mean_time": parallel_times[n][cores],
+            "std_time": parallel_std_devs[n][cores]
+        })
+
+df = pd.DataFrame(rows)
+
+df.to_csv("kmeans_timing_results_glove50d.csv", index=False)
+
+

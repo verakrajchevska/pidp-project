@@ -91,154 +91,6 @@ parakmeans = ParallelKMeans(n_clusters = 3, max_iter = 500, num_cores = 6)
 parakmeans.fit(X)
 """
 
-# Speedup ratio for each core configuration (the ratio in the csv results was computed manually as serial_time/simulated_time for each sample subset and each core configuration)
-
-speedup_50000 = []
-speedup_150000 = []
-speedup_250000 = []
-speedup_400000 = []
-speedup_550000 = []
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-"""
-
-speedup_50000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-speedup_50000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-speedup_50000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("1")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=150000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-"""
-
-speedup_150000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-speedup_150000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-speedup_150000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("2")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-"""
-
-speedup_250000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-speedup_250000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-speedup_250000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("3")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-"""
-
-speedup_400000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-speedup_400000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-speedup_400000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("4")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-"""
-
-speedup_550000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-speedup_550000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-speedup_550000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("5")
-
-# Speedup through execution times for each core configuration
-
-num_samples50000 = []
-num_samples150000 = []
-num_samples250000 = []
-num_samples400000 = []
-num_samples550000 = []
-
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-from serial_k_means import SerialKMeans
-"""
-
-num_samples50000.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-num_samples50000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-num_samples50000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-num_samples50000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("1")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=150000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-from serial_k_means import SerialKMeans
-"""
-
-num_samples150000.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-num_samples150000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-num_samples150000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-num_samples150000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("2")
-
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=250000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-from serial_k_means import SerialKMeans
-"""
-
-num_samples250000.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-num_samples250000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-num_samples250000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-num_samples250000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("3")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=400000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-from serial_k_means import SerialKMeans
-"""
-
-num_samples400000.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-num_samples400000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-num_samples400000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-num_samples400000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("4")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=550000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import ParallelKMeans
-from serial_k_means import SerialKMeans
-"""
-num_samples550000.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-num_samples550000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
-num_samples550000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
-num_samples550000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
-
-print ("5")
-
-
 # Execution times for each core configuration
 
 sim2 = []
@@ -362,7 +214,83 @@ sim6.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
 print ("10")
 
 
+# Speedup ratio for each core configuration (the ratio in the csv results was computed manually as serial_time/simulated_time for each sample subset and each core configuration)
+
+speedup_50000 = []
+speedup_150000 = []
+speedup_250000 = []
+speedup_400000 = []
+speedup_550000 = []
+
+SETUP_CODE = """
+import sklearn.datasets as skl
+X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
+from __main__ import ParallelKMeans
+"""
+
+speedup_50000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
+speedup_50000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
+speedup_50000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
+
+print ("1")
+
+SETUP_CODE = """
+import sklearn.datasets as skl
+X, y = skl.make_blobs(n_samples=150000, centers=3, cluster_std=0.60, random_state=0)
+from __main__ import ParallelKMeans
+"""
+
+speedup_150000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
+speedup_150000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
+speedup_150000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
+
+print ("2")
+
+SETUP_CODE = """
+import sklearn.datasets as skl
+X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
+from __main__ import ParallelKMeans
+"""
+
+speedup_250000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
+speedup_250000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
+speedup_250000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
+
+print ("3")
+
+SETUP_CODE = """
+import sklearn.datasets as skl
+X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
+from __main__ import ParallelKMeans
+"""
+
+speedup_400000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
+speedup_400000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
+speedup_400000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
+
+print ("4")
+
+SETUP_CODE = """
+import sklearn.datasets as skl
+X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
+from __main__ import ParallelKMeans
+"""
+
+speedup_550000.append(timeit.timeit(stmt=TEST_CODE2,setup=SETUP_CODE,number=70)/70)
+speedup_550000.append(timeit.timeit(stmt=TEST_CODE4,setup=SETUP_CODE,number=70)/70)
+speedup_550000.append(timeit.timeit(stmt=TEST_CODE6,setup=SETUP_CODE,number=70)/70)
+
+print ("5")
+
+
 import pandas as pd 	
+
+results_p2 = pd.DataFrame(sim2)
+results_p2.to_csv('./sim_k3_p2.csv', sep='\t')
+results_p4 = pd.DataFrame(sim4)
+results_p4.to_csv('./sim_k3_p4.csv', sep='\t')
+results_p6 = pd.DataFrame(sim6)
+results_p6.to_csv('./sim_k3_p6.csv', sep='\t')
 
 results1 = pd.DataFrame(speedup_50000) 
 results1.to_csv('./speedup_50000.csv', sep='\t')
@@ -375,21 +303,5 @@ results4.to_csv('./speedup_400000.csv', sep='\t')
 results5 = pd.DataFrame(speedup_550000) 
 results5.to_csv('./speedup_550000.csv', sep='\t')
 
-results1 = pd.DataFrame(num_samples50000) 
-results1.to_csv('./num_samples50000_speedup.csv', sep='\t')
-results2 = pd.DataFrame(num_samples150000) 
-results2.to_csv('./num_samples150000_speedup.csv', sep='\t')
-results3 = pd.DataFrame(num_samples250000) 
-results3.to_csv('./num_samples250000_speedup.csv', sep='\t')
-results4 = pd.DataFrame(num_samples400000) 
-results4.to_csv('./num_samples400000_speedup.csv', sep='\t')
-results5 = pd.DataFrame(num_samples550000) 
-results5.to_csv('./num_samples550000_speedup.csv', sep='\t')
 
-results1 = pd.DataFrame(sim2)
-results1.to_csv('./sim_k3_p2.csv', sep='\t')
-results2 = pd.DataFrame(sim4)
-results2.to_csv('./sim_k3_p4.csv', sep='\t')
-results3 = pd.DataFrame(sim6)
-results3.to_csv('./sim_k3_p6.csv', sep='\t')
 # # %%
