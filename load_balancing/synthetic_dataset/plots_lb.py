@@ -1,37 +1,11 @@
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-from load_balancing.synthetic_dataset.load_balancing import  run_kmeans_multiple_times
 
+data = np.load("load_balancing_results.npz", allow_pickle=True)
 
-file_path = '../Documents/Parallel_K_Means/Glove datasets/glove.6B/glove.6B.50d.txt'
-
-words = []
-vectors = []
-
-with open(file_path, 'r', encoding='utf-8') as f:
-    for line in f:
-        parts = line.strip().split()
-        word = parts[0]
-
-        vector = list(map(float, parts[1:]))
-        words.append(word)
-        vectors.append(vector)
-
-X = np.array(vectors)  # Shape: (400001, 50)
-
-sample_size = 250000  
-X = X[np.random.choice(X.shape[0], size=sample_size, replace=False)]
-
-core_configs = [2, 4, 6]  
-averaged_times_per_config = []
-core_means_per_config = []
-
-for cores in core_configs:
-    averaged_max_times, per_core_mean_times  = run_kmeans_multiple_times(cores, X, runs=10)
-    averaged_times_per_config.append(averaged_max_times)
-    core_means_per_config.append(per_core_mean_times)
-
+core_configs = data["core_configs"]
+averaged_times_per_config = data["averaged_times_per_config"]
+core_means_per_config = data["core_means_per_config"]
 
 # Plotting the averaged maximum execution times for each iteration across runs and core configurations
 def plot_execution_times(core_configs, averaged_times_per_config):
@@ -60,33 +34,9 @@ def plot_per_core_means(core_configs, core_means_per_config):
 
 
 
-# Plot the results
 plot_execution_times(core_configs, averaged_times_per_config)
-plt.savefig('load_balancing_averaged_exectime_vectors.png') 
+plt.savefig('load_balancing_averaged_exectime.png') 
 
 plot_per_core_means(core_configs, core_means_per_config)
-plt.savefig('core_means_per_iteration_vectors.png')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+plt.savefig('core_means_per_iteration.png')
 

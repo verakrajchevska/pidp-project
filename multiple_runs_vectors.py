@@ -1,13 +1,10 @@
 import numpy as np
 import pandas as pd
 import time
-import psutil
-import gc
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from parallel_k_means import ParallelKMeans
 from serial_k_means import SerialKMeans
 
-file_path = '../Documents/Parallel_K_Means/Glove datasets/glove.6B/glove.6B.50d.txt'
+file_path = './glove.6B/glove.6B.50d.txt'
 words, vectors = [], []
 
 with open(file_path, 'r', encoding='utf-8') as f:

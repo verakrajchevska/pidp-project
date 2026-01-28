@@ -10,7 +10,7 @@ class SerialKMeans:
         self.max_iter = max_iter
 
     def initialize_centroids(self, data):
-        random_indices = np.random.choice(data.shape[0])[:self.n_clusters]
+        random_indices = np.random.permutation(data.shape[0])[:self.n_clusters]
         return data[random_indices]
 
     def assign_clusters(self, data):
@@ -56,116 +56,119 @@ class SerialKMeans:
 
     def predict(self, data):
         return [self.closest_centroid(point) for point in data]
+    
 
-sim1 = []
+if __name__ == "__main__":
 
-TEST_CODE1 = """
-kmeans = SerialKMeans(n_clusters = 3, max_iter = 500)
-kmeans.fit(X)
-"""
+    sim1 = []
 
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+    TEST_CODE1 = """
+    kmeans = SerialKMeans(n_clusters = 3, max_iter = 500)
+    kmeans.fit(X)
+    """
 
-print ("1")
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=50000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
 
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=100000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-
-print ("2")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=150000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-
-print ("3")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=200000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
-
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-
-print ("4")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=250000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-
-print ("5")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=300000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
-
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-
-print ("6")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=350000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
-
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
-
-print ("7")
-
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=400000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
-
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+    print ("1")
 
 
-print ("8")
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=100000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
 
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=450000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
+    print ("2")
 
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=150000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
 
-print ("9")
+    print ("3")
 
-SETUP_CODE = """
-import sklearn.datasets as skl
-X, y = skl.make_blobs(n_samples=500000, centers=3, cluster_std=0.60, random_state=0)
-from __main__ import SerialKMeans
-"""
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=200000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
 
-sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+
+    print ("4")
+
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=250000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+
+    print ("5")
+
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=300000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+
+    print ("6")
+
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=350000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+
+    print ("7")
+
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=400000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
 
 
-print ("10")
+    print ("8")
+
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=450000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
+
+    print ("9")
+
+    SETUP_CODE = """
+    import sklearn.datasets as skl
+    X, y = skl.make_blobs(n_samples=500000, centers=3, cluster_std=0.60, random_state=0)
+    from __main__ import SerialKMeans
+    """
+
+    sim1.append(timeit.timeit(stmt=TEST_CODE1,setup=SETUP_CODE,number=70)/70)
 
 
-import pandas as pd
-results = pd.DataFrame(sim1)
-results.to_csv('./sim_serial_k3.csv', sep='\t')
+    print ("10")
 
-# %%
+
+    import pandas as pd
+    results = pd.DataFrame(sim1)
+    results.to_csv('./sim_serial_k3.csv', sep='\t')
+
+    # %%
